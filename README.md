@@ -8,7 +8,11 @@
         <Button className="file-table-list-pagination-next" onClick={this.tableListNext} disabled={this.state.tablePreAndNextBtnDisable  || this.state.tableNextBtnDisable} loading={this.state.tableNextLoading}>下一页</Button>
     </div>
 
-2.插件初始化
+2.组件引入
+
+    const PageTurn = require('trunPage');
+
+3.插件初始化
 
     turnPageInit=(result)=>{
             if(result?.nextMarker || result?.nextKeyMarker){
@@ -27,7 +31,7 @@
             }
         };
 
-3.上一页
+4.上一页
 
     tableListPre=()=>{
             this.setState({
@@ -62,7 +66,7 @@
             });
         };
 
-4.下一页
+5.下一页
 
     tableListNext=()=>{
 
