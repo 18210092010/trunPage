@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单使用</title>
+</head>
+<body>
+
+<button id="freshBtn">刷新，拉取数据，打开新文件，搜索数据等</button>
+
+<button id="preBtn">上一页</button>
+<button id="nextBtn">下一页</button>
+
+<script src="index.js"></script>
+<script>
+    const turnPage = new PageTurn();
+    let preBtn = document.getElementById('preBtn'),nextBtn = document.getElementById('nextBtn'),freshBtn = document.getElementById('freshBtn');
+
+    turnPage.init({nextMarker:'初始化数据',id:Date.now()}); //模拟初始化数据
+
+    preBtn.onclick = function () {
+        turnPage.PrePage()
+        turnPage.getBtnStatus()
+        setTimeout(function () {
+            turnPage.PrePage({nextMarker:'上一页数据',id:Date.now()})
+            turnPage.getBtnStatus();
+        },1000);
+        function fetchErr() {
+            turnPage.PrePageErrHandle();
+        }
+    };
+    nextBtn.onclick = function () {
+        console.log(turnPage.NextPage())
+        turnPage.getBtnStatus()
+        setTimeout(function () {
+            turnPage.NextPage({nextMarker:'下一页数据',id:Date.now()});
+            turnPage.getBtnStatus();
+        },1000)
+    };
+    freshBtn.onclick = function () {
+        turnPage.init({nextMarker:'sdfasdf',id:Date.now()})
+    };
+</script>
+</body>
+</html>
