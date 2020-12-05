@@ -1,0 +1,26 @@
+{
+  "name": "lc-trunpage",
+  "version": "1.0.0",
+  "description": "基于栈的翻页组件",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/18210092010/trunPage.git"
+  },
+  "keywords": [
+    "turnPage",
+    "pageTurn"
+  ],
+  "author": "lc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/18210092010/trunPage/issues"
+  },
+  "homepage": "https://github.com/18210092010/trunPage#readme"
+}
